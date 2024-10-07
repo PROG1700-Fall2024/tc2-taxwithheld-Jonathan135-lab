@@ -13,13 +13,30 @@
 def main():
     # YOUR CODE STARTS HERE, each line must be indented (one tab)
 
+    #Get user input 
+    salary = float(input("Please enter the full amount of your weekly salary:"))
+    dependents = int(input("Please enter how many dependents ou have:"))
 
+    #Define tax calculations 
+    provincial_tax_withheld = 60.00
+    federal_tax = 250.00
+    dependent_deduction_per_depedent = 40.00 
 
+    #Calculate dependent deduction 
+    dependent_deduction = dependent_deduction_per_depedent * dependents 
 
+    #Calculate total tax withheld 
+    total_tax_withhold = provincial_tax_withheld + federal_tax - dependent_deduction_per_depedent 
 
-
-
-
+    #Calculate the take home pay 
+    take_home_pay = salary - federal_tax 
+    
+    #Output the results 
+    print(f"\nProvincial tax withheld: ${provincial_tax_withheld:.2f}") 
+    print(f"\nfederal tax withheld: ${federal_tax:.2f}")
+    print(f"\nDependent deduction for {dependents}dependents: ${dependent_deduction:.2f}")
+    print(f"Total tax withheld: ${total_tax_withhold:.2f}")
+    print(f"Total take-home pay: ${take_home_pay:.2f}")
     # YOUR CODE ENDS HERE
 
 main()
